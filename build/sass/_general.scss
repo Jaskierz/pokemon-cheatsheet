@@ -1,0 +1,18 @@
+#loader {
+  background-color: rgba(#000, .5);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  img {
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    max-height: 100px;
+    max-width: 100px;
+    position: absolute;
+    top: 50%;
+  }
+}
