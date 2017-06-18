@@ -12,14 +12,14 @@
 </header>
 
 <section class="container">
-    <nav>
+    <nav style="display: none">
         <ul class="pager">
             <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Previous</a></li>
             <li class="next"><a href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
         </ul>
     </nav>
 
-    <table id="pokemon-list" class="table table-bordered table-hover">
+    <table id="pokemon-list" class="table table-bordered table-hover" style="display:none">
         <thead>
         <tr>
             <th>#</th>
@@ -30,23 +30,20 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>1</td>
-            <td><img src="//placehold.it/100" class="rotate"></td>
-            <td>umpalumpa</td>
-            <td>60</td>
-            <td><a href="#" data-toggle="modal" data-target="#detail"><i class="glyphicon glyphicon-search"></i> View</a></td>
-        </tr>
         </tbody>
     </table>
 
-    <nav>
+    <nav style="display: none">
         <ul class="pager">
             <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Previous</a></li>
             <li class="next"><a href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
         </ul>
     </nav>
 </section>
+
+<footer style="display: none">
+    <p class="text-center"><small>Copyright &copy; Bartosz Bąk. Thanks to <a href="https://pokeapi.co/">PokeAPI</a>.</small></p>
+</footer>
 
 <div id="detail" class="modal fade pokemon" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
@@ -83,7 +80,7 @@
                     </div>
                 </div>
 
-                <h4 class="text-center">Next evolution: </h4>
+                <h4 class="text-center evolution-title">Next evolution: </h4>
                 <ul class="list-inline text-center" data-evolutions>
                     <li>
                         <a href="#">
@@ -105,6 +102,7 @@
 </div>
 
 <div id="loader">
+    <p>Updating Pokedex</p>
     <img src="img/loader.gif">
 </div>
 

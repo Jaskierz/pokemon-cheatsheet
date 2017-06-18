@@ -35,9 +35,11 @@ $.extend(App, {
         navigate: function (e) {
             e.preventDefault();
 
-            var link = $(e.target).attr('href');
+            if (!$(e.target).parents('li').hasClass('disabled')) {
+                var link = $(e.target).attr('href');
 
-            App.call(link);
+                App.call(link);
+            }
 
             return false;
         },
@@ -106,8 +108,13 @@ $.extend(App, {
         },
 
         evolutions: function (item) {
+            if (item.evolutions.length < 1) {
+                $('.evolution-title').hide();
+                return '';
+            }
+
             var evolutions = {};
-            console.log(item.evolutions);
+
             $.each(item.evolutions, function (index, pokemon) {
                 var str = pokemon.resource_uri;
                 var res = str.match(/\/.+\/(\d+)\//);
@@ -123,6 +130,8 @@ $.extend(App, {
                 template.push(value);
             });
 
+            $('.evolution-title').show();
+            
             return template.join('');
         }
     }
@@ -140,5 +149,8 @@ $(document)
         $loading.show();
     })
     .ajaxStop(function () {
+        $('footer').show();
+        $('#pokemon-list').show();
+        $('nav').show();
         $loading.hide();
     });
