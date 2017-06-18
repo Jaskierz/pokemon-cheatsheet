@@ -2,7 +2,9 @@
 
 const gulp = require('gulp');
 const mocha = require('gulp-mocha');
+const mochaPhantomJS = require('gulp-mocha-phantomjs');
 const sass = require('gulp-sass');
+const uglify = require('gulp-uglify');
 
 gulp.task('copy', function () {
     return gulp
@@ -12,7 +14,14 @@ gulp.task('copy', function () {
         .pipe(gulp.dest('public/fonts'));
 });
 
-gulp.task('default', ['copy', 'sass', 'test', 'sass:watch']);
+gulp.task('default', [
+    'copy',
+    'sass',
+    'test',
+    'uglify',
+    'sass:watch',
+    'uglify:watch'
+]);
 
 gulp.task('sass', function () {
     return gulp.src('build/sass/**/*.scss')
@@ -30,6 +39,17 @@ gulp.task('sass:watch', function () {
 });
 
 gulp.task('test', function () {
-    gulp.src('build/test/**/*.js', {read: false})
-        .pipe(mocha({reporter: 'nyan'}))
+    return gulp
+        .src('test/runner.html')
+        .pipe(mochaPhantomJS());
+});
+
+gulp.task('uglify', function () {
+    return gulp.src('build/js/**/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('public/js'));
+});
+
+gulp.task('uglify:watch', function () {
+    gulp.watch('build/js/**/*.js', ['uglify']);
 });
