@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokemon cheatsheet</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header class="container">
+    <h1>Pokemon cheatsheet</h1>
+</header>
+
+<section class="container">
+    <nav aria-label="Page navigation" class="text-center">
+        <ul class="pagination">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Hit Point</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td><img src="//placehold.it/100" class="rotate"></td>
+            <td>umpalumpa</td>
+            <td>60</td>
+            <td><a href="#" data-toggle="modal" data-target="#detail"><i class="glyphicon glyphicon-search"></i> View</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <nav aria-label="Page navigation" class="text-center">
+        <ul class="pagination">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</section>
+
+<div id="detail" class="modal fade pokemon" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Umpalumpa</h4>
+            </div>
+            <div class="modal-body">
+                <figure class="text-center">
+                    <img src="//placehold.it/250">
+                </figure>
+
+                <div class="text-center stats">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <strong>Attack:</strong>
+                            <span>50</span>
+                        </div>
+                        <div class="col-xs-6">
+                            <strong>Defence:</strong>
+                            <span>50</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <strong>Speed:</strong>
+                            <span>50</span>
+                        </div>
+                        <div class="col-xs-6">
+                            <strong>Hit Points:</strong>
+                            <span>50</span>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="evolutions list-inline text-center">
+                    <li>
+                        <a href="#">
+                            <img src="//placehold.it/50">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="//placehold.it/50">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
